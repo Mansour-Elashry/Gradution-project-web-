@@ -1,314 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
-    <title>Music Recommendation System</title>
-    <style>*{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Cairo", sans-serif;
-    }
-    .navbar-nav li router-link {
-    font-size: 20px;
-    margin-left: 15px;
-}
-    .content{
-        height: calc(100vh - 70px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-    }
-    .header{
-        width: 100%;
-        height: 100vh;
-        background-position: center;
-        background-size: cover;
-        overflow-x: hidden;
-    }
-    
-    nav {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 18px 8%;
-        transition: background 1s;
-        background-color: rgba(217, 217, 217, 1);
-        color: white;
-        direction: rtl;
-    }
-    nav .logo{
-        display: flex;
-        align-items: center;
-        font-size: 26px;
-        font-weight: 600;
-        color: #FFF;
-    }
-    
-    nav .logo img{
-        margin-right: 10px;
-        
-    }
-    nav ul.me-auto{
-        margin-right: 0 !important;
-    }
-    
-    nav ul li{
-        display: inline-block;
-        list-style: none;
-        margin: 10px 20px;
-        
-    }
-    
-    nav ul li a{
-        text-decoration: none;
-        color: #FFF;
-        font-weight: 800;
-    }
-    nav:hover{
-        background: #fff;
-    }
-    
-    nav:hover .logo{
-        color: #333;
-    }
-    
-    nav:hover ul li a{
-        color: #333;
-    }
-    
-    .content{
-        color: #FFF;
-    
-    
-    }
-    
-    .content h1{
-        font-size: 120PX;
-        font-weight: 600;
-        line-height: 140px;
-    }
-    
-    .content p{
-        max-width: 500px;
-        line-height: 28px;
-        opacity: 0;
-    }
-    
-    .links{
-        margin-top: 30px;
-        opacity: 0;
-    }
-    .links a {
-        color: #FFF;
-        display: inline-block;
-        text-decoration: none;
-        width: 216px;
-        height: 54.195px;
-        border-radius: 37.756px;
-        background: #164863;
-        color: #FFF;
-        font-size: 24.585px;
-        font-weight: 600;
-        text-align: center;
-        border: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-        .links a:hover{
-        color: rgb(255, 255, 255);
-
-    }
-    .btn:hover{
-        background-color: rgb(0, 198, 109);
-    }
-    .btn{
-        border: 2px solid #fff;
-        padding: 10px 35px;
-        border-radius: 30px;
-        margin-right: 15px;
-        font-weight: 700;
-    }
-    
-    .slide-left{
-        animation: slideleft 1s linear forwards;
-        
-    }
-    
-    .content h1 {
-        /* font-family: Brush Script MT, cursive; */
-        font-size: 40px;
-        color: #164863;
-    }
-    
-    @keyframes slideleft{
-        0%{
-            transform: translate(100px);
-            opacity: 0;
-        }
-        100%{
-            transform: translate(0px);
-            opacity: 1;
-        }
-        
-    }
-    
-    p.slide-left{
-        animation-delay: 1s;
-    }
-    .links.slide-left{
-        animation-delay: 2s;
-        color:rgb(15, 143, 89);
-    }
-    .output{
-        color:white;
-        font-family:"cursive"
-        }
-     .output1{
-         margin-top:20px;
-        color:white;
-         display: inline-block;
-        font-family:"cursive"
-        }
-        body {
-            font-family: 'Cairo', sans-serif;
-        }
-        .footer {
-    background-image: linear-gradient(107deg, #164863 0%, #BED8D9 100%);
-    padding: 40px 0;
-    text-align: center;
-    cursor: pointer;
-}
-.footer img {
-    width: 243px;
-    height: 160px;
-}
-.footer img:hover {
-    transform: scale(1.1);
-    transition: 2s;
-}
-.footer .coll-5 ul li,
-.footer .coll-4 p {
-    color: #FFF;
-    text-align: center;
-    font-size: 28px;
-    font-weight: 600;
-    list-style: none;
-}
-.footer .coll-5 ul li:hover,
-.footer .coll-4 p:hover {
-    font-weight: bold;
-    transform: translateY(-5px);
-    transition: 2s;
-}
-.footer .coll-4 .mail {
-    color: #FFF;
-    font-size: 20px;
-    font-weight: 400;
-
-}
-.footer .coll-4 .mail i {
-    margin-right: 7px;
-}
-.footer .coll-4 .icons .fa-brands{
-    color: #FFF;
-    font-size: 30px;
-    margin-left: 20px;
-}
-.footer .coll-4 .icons i:hover {
-    transform: rotate(360deg) scale(1.3);
-    transition: 2s;
-}
-.footer .coll-4 .icons i:first-child:hover {
-    color: blue;
-}
-.footer .coll-4 .icons i:nth-child(2):hover {
-    color: green;
-}
-.footer .coll-4 .icons i:last-child:hover {
-    color: red;
-}
-        
-    </style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Audio player</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="header">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="container">
-                <div class="im d-sm-none"><img src="./static/Logo.png " alt=""></div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse text-center  " id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                        <li class="nav-item d-none d-lg-block">
-                            <img src="./static/Logo.png" alt="Logo">
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'home' }" class="nav-link" exact :class="{ activeLink: $route.name === 'home' }"
-                                aria-current="page">الرئيسيه
-                            </router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'practice' }" class="nav-link" exact
-                                :class="{ activeLink: $route.name === 'practice' }" aria-current="page">التمارين والالعاب</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'test' }" class="nav-link" exact
-                                :class="{ activeLink: $route.name === 'test' }" aria-current="page">الاختبار</router-link>
-                        </li>
-                        <li class="nav-item">
-                            <router-link :to="{ name: 'doctor' }" class="nav-link" exact
-                                :class="{ activeLink: $route.name === 'doctor' }" aria-current="page">الاطباء</router-link>
-                        </li>
-                        <div class="buttons me-auto d-flex align-items-center profile" v-if="token">
-                            <router-link :to="{name: 'profile'}"><img src="@/assets/images/user.png" alt=""></router-link>
-                        </div>
-                        
-                    </ul>
-                </div>       
-            </div>
-        </nav>
 
-        <div class="content">
-            <img src="./static/a.jpg" alt="logo" style="width: 400px;margin: auto;" class="d-none d-lg-block">
-            
-        </div>
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="coll-3 col-md-12 col-lg-4">
-                        <img src="./static/footer.png" alt="">
-                    </div>
-                    <div class="coll-5 col-md-6 col-lg-4">
-                        <ul class="d-flex justify-content-between footer-list">
-                            <li>الرئيسيه</li>
-                            <li>التمارين والمتابعه</li>
-                            <li>الاختبار</li>
-                        </ul>
-                    </div>
-                    <div class="coll-4 col-md-6 col-lg-4">
-                        <p>تواصل معنا</p>
-                        <div class="icons ">
-                            <i class="fa-brands fa-facebook"></i>
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <i class="fa-brands fa-instagram"></i>
-                        </div>
-                        <div class="mail">
-                            bibalance@gmail.com   <i class="fa-regular fa-envelope"></i> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="main">
+    <!-- top section -->
+    <div class="top_section">
+  		<h5>Audio Player&nbsp;&nbsp;<i class="fa fa-headphones" aria-hidden="true"></i></h5>
+  	</div>
+
+
+  <div class="tracks">
+    
+    <!-- list of song will add here from 'song_list.js' file -->
+
+    <!-- small music player -->
+    <div class="small_music_player">
+    	<div class="s_player_img">
+    		<div class="playing_img">
+    			<img src="Quran_images/1.jpg" alt="">
+    		</div>
+    	
+           <!-- wave animation part -->
+    	   <div class="wave_animation">
+			 <li></li>
+			 <li></li>
+			 <li></li>
+			 <li></li>
+			 <li></li>
+	       </div>
+	    </div>
+
+    	<div class="song_detail">
+    		<p id="song_name">Make Me Move</p>
+    		<p id="artist_name">NoCopyrightSounds [NCS]</p>
+    	</div>
+    	<i class="fa fa-chevron-up" aria-hidden="true" id="up_player"></i>
     </div>
+
+
+    <!--  popup music player part -->
+    <div class="popup_music_player">
+         <div class="top">
+    	    <p>Now Playing</p>
+    	    <i class="fa fa-chevron-down" aria-hidden="true" id="down_player"></i>
+        </div>
+        
+       <div class="song_img">
+          <img src="Quran_images/1.jpg" alt="">
+       </div>
+
+       <div class="song_description">
+          <h3 id="current_track_name">Make Me Move</h3>
+          <p id="current_singer_name">NoCopyrightSounds [NCS]</p>
+       </div>
+
+       <div class="controlls">
+    	 <div class="progress_part">
+    		<input type="range" min="0" max="100" value="0" id="slider" onchange="change_duration()">
+    		<div class="durations">
+    			<p id="current_duration">0:00</p>
+    		    <p id="total_duration">0:00</p>
+    		</div>
+
+       </div>
+    		
+        <!-- controlls btn's -->
+        <div class="controlls_btns">
+			<button id="backward_btn"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+			<button id="play_pause_btn"><i class="fa fa-play" aria-hidden="true"></i></button>
+			<button id="forward_btn"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<script src="{{ url_for('static', filename='Quran.js') }}"></script>
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+	
 </body>
 </html>

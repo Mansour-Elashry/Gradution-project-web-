@@ -18,8 +18,7 @@ app = Flask(__name__)
 def home():
     return render_template("index1.html")
     
-    
-@app.route('/camera', methods = ['GET', 'POST'])
+@app.route('/camera', methods=['GET', 'POST'])
 def camera():
     # Define the custom metric function f1_score
     def f1_score(y_true, y_pred):
@@ -59,52 +58,59 @@ def camera():
         cv2.imshow('LIVE', img)
         key = cv2.waitKey(1)
         if key == 27: 
-           cap.release()
-           cv2.destroyAllWindows()
-           break
+            cap.release()
+            cv2.destroyAllWindows()
+            break
 
     print(output)
     cap.release()
     cv2.destroyAllWindows()
     final_output1 = st.mode(output)
-    return render_template("buttons.html",final_output=final_output1)
+    return render_template("buttons.html", final_output=final_output1)
 
+@app.route('/templates/quran', methods=['GET', 'POST'])
+def quran():
+    return render_template("quran.html")
 
-@app.route('/templates/buttons', methods = ['GET','POST'])
-def buttons():
+@app.route('/templates/songs', methods=['GET', 'POST'])
+def songs():
+    return render_template("songs.html")
+
+@app.route('/templates/buttons', methods=['GET', 'POST'])
+def buttons_page():
     return render_template("buttons.html")
 
-@app.route('/songs/surprise', methods = ['GET', 'POST'])
-def songsSurprise():
+@app.route('/songs/surprise', methods=['GET', 'POST'])
+def songs_surprise():
     return render_template("songsSurprise.html")
 
-@app.route('/songs/angry', methods = ['GET', 'POST'])
-def songsAngry():
+@app.route('/songs/angry', methods=['GET', 'POST'])
+def songs_angry():
     return render_template("songsAngry.html")
 
-@app.route('/songs/sad', methods = ['GET', 'POST'])
-def songsSad():
+@app.route('/songs/sad', methods=['GET', 'POST'])
+def songs_sad():
     return render_template("songsSad.html")
 
-@app.route('/songs/disgust', methods = ['GET', 'POST'])
-def songsDisgust():
+@app.route('/songs/disgust', methods=['GET', 'POST'])
+def songs_disgust():
     return render_template("songsDisgusted.html")
 
-@app.route('/songs/happy', methods = ['GET', 'POST'])
-def songsHappy():
+@app.route('/songs/happy', methods=['GET', 'POST'])
+def songs_happy():
     return render_template("songshappy.html")
 
-@app.route('/songs/fear', methods = ['GET', 'POST'])
-def songsFear():
+@app.route('/songs/fear', methods=['GET', 'POST'])
+def songs_fear():
     return render_template("songsFear.html")
 
-@app.route('/songs/neutral', methods = ['GET', 'POST'])
-def songsNeutral():
+@app.route('/songs/neutral', methods=['GET', 'POST'])
+def songs_neutral():
     return render_template("songsSad.html")
 
-@app.route('/templates/join_page', methods = ['GET', 'POST'])
-def join():
+@app.route('/templates/join_page', methods=['GET', 'POST'])
+def join_page():
     return render_template("join_page.html")
-    
+
 if __name__ == "__main__":
     app.run(debug=True)
