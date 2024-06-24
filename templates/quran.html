@@ -20,7 +20,6 @@
     margin-left: 15px;
 }
     .content{
-        background: linear-gradient(107deg, #164863 0%, #BED8D9 100%);
         height: calc(100vh - 70px);
         display: flex;
         justify-content: space-between;
@@ -280,23 +279,8 @@
         </nav>
 
         <div class="content">
-            <img src="./static/thinking.png" alt="logo" class="d-none d-lg-block">
-            <div class="container-st">
-                <h1 class="slide-left">meditative sound<br>scape.....!</h1>
-                <div class="links slide-left">
-                    <a href="http://localhost:5000/camera" class="btn">Lets Start</a>
-                </div>
-            </div>
+            <img src="./static/a.jpg" alt="logo" style="width: 400px;margin: auto;" class="d-none d-lg-block">
             
-        </div>
-    </br>
-    <div class="output" >
-        {% if final_output %}
-    <h2 style="font-family:Bio-Rhyme">Your Emotion is {{final_output}}</h2>
-        <div class="output1" >
-         <a href="http://localhost:5000/songs/{{final_output}}" class="btn">Songs</a>
-            </div>
-    {% endif %}
         </div>
         <div class="footer">
             <div class="container">
