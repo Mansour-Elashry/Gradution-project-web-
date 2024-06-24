@@ -280,32 +280,23 @@
         </nav>
 
         <div class="content">
+            <img src="./static/thinking.png" alt="logo" class="d-none d-lg-block">
             <div class="container-st">
-                <div style="margin: auto;margin-left: 400px;">
-                    <a href="" style="text-decoration: none;
-                    width: 216px;
-                    height: 54.195px;
-                    border-radius: 37.756px;
-                    background: #164863;
-                    color: #FFF;
-                    font-size: 24.585px;
-                    font-weight: 600;
-                    text-align: center;
-                    border: none;
-                    display: inline-flex;justify-content: center;align-items: center;" class="btn">قران</a>
-                    <a href="" style="text-decoration: none;
-                    width: 216px;
-                    height: 54.195px;
-                    border-radius: 37.756px;
-                    background: #164863;
-                    color: #FFF;
-                    font-size: 24.585px;
-                    font-weight: 600;
-                    text-align: center;
-                    border: none;
-                    display: inline-flex;justify-content: center;align-items: center;" class="btn">موسيقى</a>
+                <h1 class="slide-left" style="direction: rtl;">استكشف عالماً من الهدوء والراحة لتجديد طاقتك واستعادة توازنك.</h1>
+                <div class="links slide-left">
+                    <a href="http://localhost:5000/camera" class="btn">هيا بنا</a>
                 </div>
             </div>
+            
+        </div>
+    </br>
+    <div class="output" >
+        {% if final_output %}
+    <h2 style="font-family:Bio-Rhyme">Your Emotion is {{final_output}}</h2>
+        <div class="output1" >
+         <a href="http://localhost:5000/songs/{{final_output}}" class="btn">Songs</a>
+            </div>
+    {% endif %}
         </div>
         <div class="footer">
             <div class="container">
