@@ -279,7 +279,7 @@ box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
   display: flex;
   align-items: center;
   border-radius: 20px 20px 0 0;
-  background: #673AB7;
+  background: linear-gradient(107deg, #164863 0%, #BED8D9 100%);
   transition: 0.4s;
   transform: translateY(80px);
 }
