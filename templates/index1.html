@@ -270,6 +270,10 @@
                             <router-link :to="{ name: 'doctor' }" class="nav-link" exact
                                 :class="{ activeLink: $route.name === 'doctor' }" aria-current="page">الاطباء</router-link>
                         </li>
+                        <li class="nav-item">
+                            <router-link :to="{ name: 'doctor' }" class="nav-link" exact
+                                :class="{ activeLink: $route.name === '#' }" aria-current="page">التوصيه</router-link>
+                        </li>
                         <div class="buttons me-auto d-flex align-items-center profile" v-if="token">
                             <router-link :to="{name: 'profile'}"><img src="@/assets/images/user.png" alt=""></router-link>
                         </div>
@@ -280,9 +284,27 @@
         </nav>
 
         <div class="content">
-            <img src="./static/thinking.png" alt="logo" class="d-none d-lg-block">
+            <img src="./static/" alt="logo" class="d-none d-lg-block">
             <div class="container-st">
-                <div style="margin: auto;margin-left: 0px;">
+                <div>
+                    <h2 style="font-size: 40px; 
+                    font-weight: 700;
+                    font-size: 40px;
+                    margin-bottom: 35px;
+                    text-align: right;
+                    color: #164863;"
+                    >لدينا عالم رائع من الموسيقي حسب حالتك المزاجيه</h2>
+                    <h5 style="
+                        margin-bottom: 43px;
+                        font-size: 2;
+                        font-size: 22px;
+                        text-align: right;
+                        color: #164863;
+                        font-weight: 500;"> 
+                        قط قم باختيار الموسيقى ثم إظهار الحاله المزاجيه للكاميرا او إختيار القرآن لحاله مزاجيه أكثر إستقرارا 
+                    </h5>
+                </div>
+                <div style="text-align: center;">
                     <a href="/templates/quran" style="text-decoration: none;
                     width: 216px;
                     height: 54.195px;
